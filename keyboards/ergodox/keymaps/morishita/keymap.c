@@ -16,42 +16,42 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * | ESC    |   1  |   2  |   3  |   4  |   5  | ESC  |           |  ~/` |   6  |   7  |   8  |   9  |   0  |   \    |
+ * | ESC    |   1  |   2  |   3  |   4  |   5  |  DEL |           |  ~/` |   6  |   7  |   8  |   9  |   0  |   \    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | Tab    |   Q  |   W  |   E  |   R  |   T  |      |           |  {   |   Y  |   U  |   I  |   O  |   P  |   {/]  |
+ * | Tab    |   Q  |   W  |   E  |   R  |   T  |   +  |           |  {   |   Y  |   U  |   I  |   O  |   P  |   {/]  |
  * |--------+------+------+------+------+------|      |           |  [   |------+------+------+------+------+--------|
- * | LGui   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   +    |
- * |--------+------+------+------+------+------|  L1  |           |  "   |------+------+------+------+------+--------|
+ * | LGui   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   :    |
+ * |--------+------+------+------+------+------|   =  |           |  "   |------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |  '   |   N  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |MO(L1)|      | LAlt | LCtrl| LGui |                                       | RGui |  (   |  )   |   =  | MO(L2)|
+ *   |      |      | LAlt | LCtrl|HYPR_E|                                       |HYPR_K|  (   |  )   |MO(L1)|MO(L2)|
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | Home | PgUp |       | PgDn | End  |
  *                                 ,------|------|------|       |------+------+------.
- *                                 |      |      | LAlt |       | RAlt |      |      |
- *                                 | Space|  Del |------|       |------|BackSp| Enter|
- *                                 |      |      |LShift|       |RShift|      |      |
+ *                                 | Space|      | LAlt |       | RAlt |      |      |
+ *                                 |   /  |MO(L1)|------|       |------|BackSp| Enter|
+ *                                 | LCtrl|      |   $  |       |   ^  |      |      |
  *                                 `--------------------'       `--------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
 // Otherwise, it needs KC_*
 [BASE] = KEYMAP(  // layer 0 : default
         // left hand
-        KC_ESC,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_ESC,
-        KC_TAB,         KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   KC_TRNS,
+        KC_ESC,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_DEL,
+        KC_TAB,         KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   KC_PLUS,
         KC_LGUI,        KC_A,         KC_S,   KC_D,   KC_F,   KC_G,
-        KC_LSFT,        KC_Z,         KC_X,   KC_C,   KC_V,   KC_B,   TG(LAYER1),
-        MO(LAYER1),     KC_TRNS,      KC_LALT,KC_LCTL,HYPR(KC_E),
+        KC_LSFT,        KC_Z,         KC_X,   KC_C,   KC_V,   KC_B,   KC_EQL,
+        KC_NO,         KC_NO,         KC_LALT,KC_LCTL,HYPR(KC_E),
                                                       KC_HOME,KC_PGUP,
                                                               KC_LALT,
-                                               KC_SPC,KC_DEL,S(KC_4),
+                                    LCTL_T(KC_SPC),MO(LAYER1),S(KC_4),
         // right hand
              KC_GRV,      KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_BSLS,
              KC_LBRC,     KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             KC_RBRC,
-                          KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,          KC_PLUS,
+                          KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,          KC_COLN,
              KC_QUOT,     KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,          KC_MINS,
-                               HYPR(KC_K),   S(KC_9),S(KC_0),KC_EQL,           MO(LAYER2),
+                               HYPR(KC_K),S(KC_9),S(KC_0),MO(LAYER1),    MO(LAYER2),
              KC_PGDN,     KC_END,
              KC_RALT,
              S(KC_6),KC_BSPC, KC_ENT
