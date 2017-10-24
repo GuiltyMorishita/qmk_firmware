@@ -1,13 +1,6 @@
 #ifndef PLANCK_H
 #define PLANCK_H
 
-#ifdef SUBPROJECT_rev3
-    #include "rev3.h"
-#endif
-#ifdef SUBPROJECT_rev4
-    #include "rev4.h"
-#endif
-
 #include "quantum.h"
 
 #define PLANCK_MIT( \
@@ -37,5 +30,13 @@
 }
 
 #define KEYMAP PLANCK_GRID
+#define LAYOUT_ortho_4x12 PLANCK_GRID
+
+#ifdef KEYBOARD_planck_rev3
+    #include "rev3.h"
+#endif
+#ifdef KEYBOARD_planck_rev4
+    #include "rev4.h"
+#endif
 
 #endif
