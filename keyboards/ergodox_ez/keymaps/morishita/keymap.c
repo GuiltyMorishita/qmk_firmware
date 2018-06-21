@@ -4,7 +4,7 @@
 
 // On ergodox folder "make teensy keymap=morishita"
 
-#include "ergodox.h"
+#include "ergodox_ez.h"
 #include "debug.h"
 #include "action_layer.h"
 
