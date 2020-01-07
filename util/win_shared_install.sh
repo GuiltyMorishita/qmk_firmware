@@ -18,8 +18,12 @@ function install_utils {
     wget 'https://www.pjrc.com/teensy/teensy_loader_cli_windows.zip'
     unzip teensy_loader_cli_windows.zip
 
+    echo "Installing bootloadHID"
+    wget 'https://www.obdev.at/downloads/vusb/bootloadHID.2012-12-08.zip'
+    unzip bootloadHID.2012-12-08.zip
+
     echo "Installing Atmel Flip"
-    wget 'http://www.atmel.com/images/Flip%20Installer%20-%203.4.7.112.exe'
+    wget 'http://ww1.microchip.com/downloads/en/DeviceDoc/Flip%20Installer%20-%203.4.7.112.exe'
     mv Flip\ Installer\ \-\ 3.4.7.112.exe FlipInstaller.exe
 
     echo "Downloading the QMK driver installer"
@@ -34,7 +38,7 @@ function install_drivers {
     pushd "$download_dir"
     cp -f "$dir/drivers.txt" .
     echo 
-    cmd.exe /c "qmk_driver_installer.exe $1 $2 drivers.txt"
+    cmd.exe //c "qmk_driver_installer.exe $1 $2 drivers.txt"
     popd > /dev/null
 }
 

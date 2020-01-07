@@ -15,7 +15,7 @@ else
 endif
 
 LUFA_SRC = lufa.c \
-	   descriptor.c \
+	   usb_descriptor.c \
 	   outputselect.c \
 	   $(LUFA_SRC_USB)
 
@@ -29,6 +29,7 @@ ifeq ($(strip $(BLUETOOTH_ENABLE)), yes)
 endif
 
 ifeq ($(strip $(BLUETOOTH)), AdafruitBLE)
+		LUFA_SRC += analog.c
 		LUFA_SRC += $(LUFA_DIR)/adafruit_ble.cpp
 endif
 
@@ -51,6 +52,7 @@ SRC += $(LUFA_SRC)
 # Search Path
 VPATH += $(TMK_PATH)/$(LUFA_DIR)
 VPATH += $(LUFA_PATH)
+VPATH += $(DRIVER_PATH)/avr
 
 # Option modules
 #ifdef $(or MOUSEKEY_ENABLE, PS2_MOUSE_ENABLE)
@@ -64,7 +66,7 @@ LUFA_OPTS  = -DUSB_DEVICE_ONLY
 LUFA_OPTS += -DUSE_FLASH_DESCRIPTORS
 LUFA_OPTS += -DUSE_STATIC_OPTIONS="(USB_DEVICE_OPT_FULLSPEED | USB_OPT_REG_ENABLED | USB_OPT_AUTO_PLL)"
 #LUFA_OPTS += -DINTERRUPT_CONTROL_ENDPOINT
-LUFA_OPTS += -DFIXED_CONTROL_ENDPOINT_SIZE=8 
+LUFA_OPTS += -DFIXED_CONTROL_ENDPOINT_SIZE=8
 LUFA_OPTS += -DFIXED_CONTROL_ENDPOINT_SIZE=8
 LUFA_OPTS += -DFIXED_NUM_CONFIGURATIONS=1
 

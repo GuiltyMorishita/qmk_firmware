@@ -15,20 +15,30 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "lufa.h"
 #include "outputselect.h"
 #ifdef MODULE_ADAFRUIT_BLE
-    #include "adafruit_ble.h"
+#    include "adafruit_ble.h"
 #endif
 
 uint8_t desired_output = OUTPUT_DEFAULT;
 
+/** \brief Set Output
+ *
+ * FIXME: Needs doc
+ */
 void set_output(uint8_t output) {
     set_output_user(output);
     desired_output = output;
 }
 
-__attribute__((weak))
-void set_output_user(uint8_t output) {
-}
+/** \brief Set Output User
+ *
+ * FIXME: Needs doc
+ */
+__attribute__((weak)) void set_output_user(uint8_t output) {}
 
+/** \brief Auto Detect Output
+ *
+ * FIXME: Needs doc
+ */
 uint8_t auto_detect_output(void) {
     if (USB_DeviceState == DEVICE_STATE_Configured) {
         return OUTPUT_USB;
@@ -41,16 +51,19 @@ uint8_t auto_detect_output(void) {
 #endif
 
 #ifdef BLUETOOTH_ENABLE
-    return OUTPUT_BLUETOOTH; // should check if BT is connected here
+    return OUTPUT_BLUETOOTH;  // should check if BT is connected here
 #endif
 
     return OUTPUT_NONE;
 }
 
+/** \brief Where To Send
+ *
+ * FIXME: Needs doc
+ */
 uint8_t where_to_send(void) {
     if (desired_output == OUTPUT_AUTO) {
         return auto_detect_output();
     }
     return desired_output;
 }
-

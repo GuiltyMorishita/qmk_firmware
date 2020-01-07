@@ -1,4 +1,4 @@
-# callum’s planck layout
+# callum's planck layout
 
 This is a layout for the grid planck, built with a few ideals in mind:
 
@@ -17,70 +17,22 @@ This is a layout for the grid planck, built with a few ideals in mind:
 - There should be two of every modifier (one on each side), otherwise certain
   long key combinations become hard to make.
 
-We have five layers. A `BASE` layer, in colemak; a `MOVE` layer, with an arrow
-cluster, other movement keys, and hotkeys; a `SYMB` layer, with numbers and
-symbols; a `FUNC` layer, with function keys and media keys; and a `MORE` layer,
-with stuff that doesn’t fit anywhere else. The `MORE` layer is activated by
-holding the Move and Symb keys simultaniously.
+- It should be possible to do things you might want to do while using the mouse
+  with only the left hand (e.g. change tabs, navigate back or forwards in
+  browser history).
 
-```
-/* BASE
- * ,-----------------------------------------------------------------------------------.
- * | Tab  |   Q  |   W  |   F  |   P  |   G  |   J  |   L  |   U  |   Y  |   ;  |   -  |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Bksp |   A  |   R  |   S  |   T  |   D  |   H  |   N  |   E  |   I  |   O  |   '  |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|   Z  |   X  |   C  |   V  |   B  |   K  |   M  |   ,  |   .  |   /  | Shift|
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Func | Ctrl |  Alt |  Cmd | Symb | Enter| Space| Move |  Cmd |  Alt | Ctrl | Func |
- * `-----------------------------------------------------------------------------------'
- */
+- Symbols should be arranged so that the most frequently used are easiest to
+  reach. This includes numbers, and lower numbers are more commonly used than
+  higher ones. (number arrangement borrowed from [dustypomeleau's minidox
+  layout][].
 
-/* MOVE
- * ,-----------------------------------------------------------------------------------.
- * | H(F7)| H(F8)| H(6) | H(5) | H(4) | H(F9)|H(F10)| Home |  Up  |  End | H(A) |  Esc |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | H(F3)| H(F4)| H(3) | H(2) | H(1) | H(F5)| H(F6)| Left | Down | Right| Caps |  Del |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      | H(0) | H(9) | H(8) | H(7) | H(F1)| H(F2)| Pg Dn| Pg Up|H(F11)|H(F12)|      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
+Layout rendered with [keyboard-layout-editor.com][]:
 
-/* SYMB
- * ,-----------------------------------------------------------------------------------.
- * |  Esc |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |   –  |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |  Del |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  |   ’  |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |   ~  |   `  |   +  |   =  |   |  |   \  |   [  |   ]  |   {  |   }  |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
+![](https://callumoakley.net/images/keymap.png)
 
-/* MORE
- * ,-----------------------------------------------------------------------------------.
- * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |   £  |      |      |      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |   “  |   ”  |   ‘  |   ’  |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
+The only behaviour not captured in this graphic is: pressing both cmd keys will
+send cmd+ctrl. See [keymap.c][] for details.
 
-/* FUNC
- * ,-----------------------------------------------------------------------------------.
- * | Reset|  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 | Vol+ |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Power|  F11 |  F12 |  F13 |  F14 |  F15 |  F16 |  F17 |  F18 |  F19 |  F20 | Vol- |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |  F21 |  F22 |  F23 |  F24 |      |      |      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      | Prev | Mute | Play | Next |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
-```
+[dustypomeleau's minidox layout]: https://github.com/qmk/qmk_firmware/tree/master/keyboards/minidox/keymaps/dustypomerleau
+[keyboard-layout-editor.com]: http://www.keyboard-layout-editor.com
+[keymap.c]: keymap.c
