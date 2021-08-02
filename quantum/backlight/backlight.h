@@ -44,10 +44,6 @@ typedef union {
     };
 } backlight_config_t;
 
-void backlight_pins_init(void);
-void backlight_pins_on(void);
-void backlight_pins_off(void);
-
 void    backlight_init(void);
 void    backlight_toggle(void);
 void    backlight_enable(void);
@@ -59,7 +55,11 @@ void    backlight_decrease(void);
 void    backlight_level_noeeprom(uint8_t level);
 void    backlight_level(uint8_t level);
 uint8_t get_backlight_level(void);
+
+uint8_t eeconfig_read_backlight(void);
+void    eeconfig_update_backlight(uint8_t val);
 void    eeconfig_update_backlight_current(void);
+void    eeconfig_update_backlight_default(void);
 
 // implementation specific
 void backlight_init_ports(void);
@@ -79,11 +79,11 @@ void    breathing_period_default(void);
 void    breathing_period_inc(void);
 void    breathing_period_dec(void);
 
+void breathing_toggle(void);
+
 // implementation specific
 void breathing_enable(void);
 void breathing_disable(void);
-void breathing_toggle(void);
 bool is_breathing(void);
 void breathing_pulse(void);
-void breathing_task(void);
 #endif
