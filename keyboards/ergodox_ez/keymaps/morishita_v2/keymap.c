@@ -1,5 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
+#include "debug.h"
+#include "action_layer.h"
 
 #define BASE   0 // default layer
 #define LAYER1 1
