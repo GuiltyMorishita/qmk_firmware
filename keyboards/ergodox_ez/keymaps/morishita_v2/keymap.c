@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|  ^x func prefix |           |  "   |------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |                 |           |  '   |   N  |   M  |   ,  |   .  |   /  |   -/_  |
  * `--------+------+------+------+------+------------------------'           `-------------+------+------+------+------+--------'
- *   |MO(L1)|MO(L2)| LAlt | LCtrl|HYPR_E|                                       |HYPR_K|  (   |  )   |   =  |   +  |
+ *   |MO(L1)|MO(L2)| LAlt | LCtrl|  F18 |                                    |  F19 |  (   |  )   |   =  |   +  |
  *   `----------------------------------'                                       `----------------------------------'
  *                                                   ,-------------.       ,-------------.
  *                                                   | Home | PgUp |       | PgDn | DEL  |
@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,     KC_Q,       KC_W,    KC_E,    KC_R,       KC_T,    LCTL(KC_J),
   KC_LGUI,    KC_A,       KC_S,    KC_D,    KC_F,       KC_G,
   KC_LSFT,    KC_Z,       KC_X,    KC_C,    KC_V,       KC_B,    LCTL(KC_X),
-  TG(LAYER1), MO(LAYER2), KC_LALT, KC_LCTL, HYPR(KC_E),
+  TG(LAYER1), MO(LAYER2), KC_LALT, KC_LCTL, KC_F18,
 
                                                         KC_HOME,    KC_PGUP,
                                                                     KC_LALT,
@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                               KC_LBRC,      KC_Y,    KC_U,    KC_I,    KC_O,              KC_P,           KC_RBRC,
                                                                                             KC_H,    KC_J,    KC_K,    KC_L,              KC_SCLN,        KC_COLN,
                                                                               KC_QUOT,      KC_N,    KC_M,    KC_COMM, KC_DOT,            KC_SLSH,        KC_MINS,
-                                                                              HYPR(KC_K),   S(KC_9), S(KC_0), KC_EQL,  KC_PLUS,
+                                                                              KC_F19,    S(KC_9), S(KC_0), KC_EQL,  KC_PLUS,
 
                                                                               KC_PGDN, KC_DEL,
                                                                               KC_RALT,
