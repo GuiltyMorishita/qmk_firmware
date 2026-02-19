@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(brew --prefix:*)",
+      "Bash(export PATH=\"/opt/homebrew/opt/avr-gcc@8/bin:$PATH\")",
+      "Bash(make:*)",
+      "Bash(brew install:*)"
+    ]
+  }
+}
