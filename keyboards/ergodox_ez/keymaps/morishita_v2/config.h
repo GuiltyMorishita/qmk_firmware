@@ -1,4 +1,0 @@
-// #undef  TAPPING_TERM
-// #define TAPPING_TERM 50
-#define TAPPING_FORCE_HOLD
-#define PERMISSIVE_HOLD
